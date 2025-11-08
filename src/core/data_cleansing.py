@@ -143,20 +143,24 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser(
         description="Clean misinformation data (CSV dataset or single JSON input)."
     )
-    p.add_argument("--mode", choices=["dataset", "json"], required=True,
-                   help="Choose whether to clean a dataset CSV or a single JSON input.")
-    p.add_argument("--in", dest="in_path", required=True,
-                   help="Input CSV file or JSON string/file path.")
-    p.add_argument("--out", dest="out_path", help="Output file or directory path.")
+    p.add_argument("--mode", choices=["dataset", "json"], default="dataset",
+                   help="Choose whether to clean a dataset CSV or a single JSON input. Default: dataset")
+    p.add_argument("--in", dest="in_path",
+                   default="./src/data/raw/misinfo_dataset.csv",
+                   help="Input CSV file or JSON string/file path. Default: ./src/data/raw/misinfo_dataset.csv")
+    p.add_argument("--out", dest="out_path",
+                   default="./src/data/processed",
+                   help="Output file or directory path. Default: ./src/data/processed")
     p.add_argument("--preview", action="store_true",
-                   help="Show preview summary (dataset mode only).")
+                   default=True,
+                   help="Show preview summary (dataset mode only). Default: True")
     p.add_argument("--save", action="store_true",
                    help="Save cleaned output to file (JSON mode only).")
+
     args = p.parse_args()
 
     if args.mode == "dataset":
-        out_dir = args.out_path or "./src/data/processed"
-        clean_dataset(args.in_path, out_dir, preview=args.preview)
+        clean_dataset(args.in_path, args.out_path, preview=args.preview)
     else:
         cleaned = clean_json_input(args.in_path, out_path=args.out_path, save_back=args.save)
         print(json.dumps(cleaned, indent=2, ensure_ascii=False))
