@@ -53,22 +53,39 @@ To ensure reproducibility and isolate dependencies, this project uses a Python v
     ```
 
 3. Install Dependencies
+
    ```sh
    pip install -r requirements.txt
    ```
 
 ## Data Processing
 
-Clean Dataset:
+### Download Dataset
 
-```python
-python -m src.core.data_cleansing
-python -m src.core.data_cleansing --preview
+Find the latest release, and follow the instructions to download the most recent dataset. Then, continue reading.
+
+### Clean Dataset
+
+You can simpliy run the following command to clean the dataset: `python -m src.core.data_cleansing`.
+
+```
+usage: data_cleansing.py [-h] --mode {dataset,json} --in IN_PATH [--out OUT_PATH] [--preview] [--save]
+
+Clean misinformation data (CSV dataset or single JSON input).
+
+options:
+  -h, --help            show this help message and exit
+  --mode {dataset,json}
+                        Choose whether to clean a dataset CSV or a single JSON input.
+  --in IN_PATH          Input CSV file or JSON string/file path.
+  --out OUT_PATH        Output file or directory path.
+  --preview             Show preview summary (dataset mode only).
+  --save                Save cleaned output to file (JSON mode only).
 ```
 
-Find Max Length:
+### Find Max Length:
 
-```python
+```sh
 python -m src.utils.suggest_maxlen
 ```
 
@@ -76,7 +93,7 @@ python -m src.utils.suggest_maxlen
 
 ### Prepare Features
 
-You can simpily run `python -m python -m src.models.model_2.prepare_features --preview`. You can pass in the `-h` flag to view all command line options as well.
+You can simpily run `python -m src.models.model_2.prepare_features --preview`. You can pass in the `-h` flag to view all command line options as well.
 
 ```
 usage: prepare_features.py [-h] [--in IN_PATH] [--out OUT_DIR] [--maxlen MAXLEN] [--preview]
@@ -95,7 +112,7 @@ options:
 
 You can train the model by running `python -m src.models.model_2.train_bilstm --epochs 12 --batch 64`. You can pass in the `-h` flag to view all command line options. 
 
-```python
+```
 usage: train_bilstm.py [-h] [--features FEATURES] [--artifacts ARTIFACTS] [--maxlen MAXLEN] [--epochs EPOCHS] [--batch BATCH] [--no-class-weight] [--out OUT_MODEL_PATH] [--use-date]
 
 Train BiLSTM + Attention on processed misinformation dataset.
@@ -113,7 +130,7 @@ options:
 
 ```
 
-Evaluate model:
+### Evaluate model:
 
 ```python
 python -m src.models.model_2.evaluate_bilstm
