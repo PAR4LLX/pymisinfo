@@ -17,18 +17,18 @@ This project is part of an academic initiative exploring the intersection of art
 
 ## Project Structure
 ```
-pymisinfo/\
-├── src/\
-│   ├── core/                  # Core logic and text cleansing utilities\
-│   ├── data/                  # Raw and processed datasets\
-│   ├── models/                # Model implementations and training scripts\
-│   │   ├── model_1/           # Logistic Regression (baseline)\
-│   │   ├── model_2/           # BiLSTM (deep learning)\
-│   │   └── model_3/           # Random Forest / Decision Forests\
-│   ├── utils/                 # Shared utilities\
-├── requirements.txt\
-├── README.txt\
-└── LICENSE\
+pymisinfo/
+├── src/
+│   ├── core/                  # Core logic and text cleansing utilities
+│   ├── data/                  # Raw and processed datasets
+│   ├── models/                # Model implementations and training scripts
+│   │   ├── model_1/           # Logistic Regression (baseline)
+│   │   ├── model_2/           # BiLSTM (deep learning)
+│   │   └── model_3/           # Random Forest / Decision Forests
+│   ├── utils/                 # Shared utilities
+├── requirements.txt
+├── README.txt
+└── LICENSE
 ```
 
 ## Environment Setup (venv)
