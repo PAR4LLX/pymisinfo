@@ -53,6 +53,7 @@ To ensure reproducibility and isolate dependencies, this project uses a Python v
     ```
 
 3. Install Dependencies
+
    ```sh
    pip install -r requirements.txt
    ```
@@ -82,9 +83,9 @@ options:
   --save                Save cleaned output to file (JSON mode only).
 ```
 
-Find Max Length:
+### Find Max Length:
 
-```python
+```sh
 python -m src.utils.suggest_maxlen
 ```
 
@@ -111,7 +112,7 @@ options:
 
 You can train the model by running `python -m src.models.model_2.train_bilstm --epochs 12 --batch 64`. You can pass in the `-h` flag to view all command line options. 
 
-```python
+```
 usage: train_bilstm.py [-h] [--features FEATURES] [--artifacts ARTIFACTS] [--maxlen MAXLEN] [--epochs EPOCHS] [--batch BATCH] [--no-class-weight] [--out OUT_MODEL_PATH] [--use-date]
 
 Train BiLSTM + Attention on processed misinformation dataset.
@@ -129,7 +130,7 @@ options:
 
 ```
 
-Evaluate model:
+### Evaluate model:
 
 ```python
 python -m src.models.model_2.evaluate_bilstm
