@@ -146,7 +146,7 @@ if __name__ == "__main__":
     p.add_argument("--mode", choices=["dataset", "json"], default="dataset",
                    help="Choose whether to clean a dataset CSV or a single JSON input. Default: dataset")
     p.add_argument("--in", dest="in_path",
-                   default="./src/data/raw/misinfo_dataset.csv",
+                   default="./src/data/raw/misinfo_v2.csv",
                    help="Input CSV file or JSON string/file path. Default: ./src/data/raw/misinfo_dataset.csv")
     p.add_argument("--out", dest="out_path",
                    default="./src/data/processed",
