@@ -77,13 +77,37 @@ python -m src.utils.suggest_maxlen
 Prepare Features:
 
 ```python
-python -m src.models.model_2.prepare_features
-python -m src.models.model_2.prepare_features --preview
+python -m src.models.model_2.prepare_features -h
+usage: prepare_features.py [-h] [--in IN_PATH] [--out OUT_DIR] [--maxlen MAXLEN] [--preview]
+
+Tokenize, encode, and split the cleaned dataset.
+
+options:
+  -h, --help       show this help message and exit
+  --in IN_PATH     Path to cleaned CSV file
+  --out OUT_DIR    Output directory for tokenized data
+  --maxlen MAXLEN
+  --preview        Print output summary to console
 ```
 Train model:
 
 ```python
-python -m src.models.model_2.train_bilstm --epochs 12 --batch 64
+python -m src.models.model_2.train_bilstm -h
+usage: train_bilstm.py [-h] [--features FEATURES] [--artifacts ARTIFACTS] [--maxlen MAXLEN] [--epochs EPOCHS] [--batch BATCH] [--no-class-weight] [--out OUT_MODEL_PATH] [--use-date]
+
+Train BiLSTM + Attention on processed misinformation dataset.
+
+options:
+  -h, --help            show this help message and exit
+  --features FEATURES
+  --artifacts ARTIFACTS
+  --maxlen MAXLEN
+  --epochs EPOCHS
+  --batch BATCH
+  --no-class-weight
+  --out OUT_MODEL_PATH
+  --use-date            Include normalized date feature in training
+
 ```
 
 Evaluate model:
