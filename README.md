@@ -77,7 +77,7 @@ python -m src.utils.suggest_maxlen
 Prepare Features:
 
 ```python
-python -m src.models.model_2.prepare_features \
+python -m src.models.model_2.prepare_features
 python -m src.models.model_2.prepare_features --preview
 ```
 Train model:
