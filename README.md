@@ -21,6 +21,7 @@ Technology Stack
 
 Project Structure
 -----------------
+```
 pymisinfo/\
 ├── src/\
 │   ├── core/                  # Core logic and text cleansing utilities\
@@ -33,6 +34,7 @@ pymisinfo/\
 ├── requirements.txt\
 ├── README.txt\
 └── LICENSE\
+```
 
 Environment Setup (venv)
 -------------------------
