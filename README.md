@@ -66,22 +66,8 @@ Find the latest release, and follow the instructions to download the most recent
 
 ### Clean Dataset
 
-You can simpliy run the following command to clean the dataset: `python -m src.core.data_cleansing`.
+You can simpliy run the following command to clean the dataset: `python -m src.core.data_cleansing`. You can use the `-h` flag to view all options.
 
-```
-usage: data_cleansing.py [-h] --mode {dataset,json} --in IN_PATH [--out OUT_PATH] [--preview] [--save]
-
-Clean misinformation data (CSV dataset or single JSON input).
-
-options:
-  -h, --help            show this help message and exit
-  --mode {dataset,json}
-                        Choose whether to clean a dataset CSV or a single JSON input.
-  --in IN_PATH          Input CSV file or JSON string/file path.
-  --out OUT_PATH        Output file or directory path.
-  --preview             Show preview summary (dataset mode only).
-  --save                Save cleaned output to file (JSON mode only).
-```
 
 ### Find Max Length:
 
@@ -95,40 +81,9 @@ python -m src.utils.suggest_maxlen
 
 You can simpily run `python -m src.models.model_2.prepare_features --preview`. You can pass in the `-h` flag to view all command line options as well.
 
-```
-usage: prepare_features.py [-h] [--in IN_PATH] [--out OUT_DIR] [--maxlen MAXLEN] [--preview]
-
-Tokenize, encode, and split the cleaned dataset.
-
-options:
-  -h, --help       show this help message and exit
-  --in IN_PATH     Path to cleaned CSV file
-  --out OUT_DIR    Output directory for tokenized data
-  --maxlen MAXLEN
-  --preview        Print output summary to console
-```
-
 ### Train model:
 
 You can train the model by running `python -m src.models.model_2.train_bilstm --epochs 12 --batch 64`. You can pass in the `-h` flag to view all command line options. 
-
-```
-usage: train_bilstm.py [-h] [--features FEATURES] [--artifacts ARTIFACTS] [--maxlen MAXLEN] [--epochs EPOCHS] [--batch BATCH] [--no-class-weight] [--out OUT_MODEL_PATH] [--use-date]
-
-Train BiLSTM + Attention on processed misinformation dataset.
-
-options:
-  -h, --help            show this help message and exit
-  --features FEATURES
-  --artifacts ARTIFACTS
-  --maxlen MAXLEN
-  --epochs EPOCHS
-  --batch BATCH
-  --no-class-weight
-  --out OUT_MODEL_PATH
-  --use-date            Include normalized date feature in training
-
-```
 
 ### Evaluate model:
 
