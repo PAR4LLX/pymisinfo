@@ -38,17 +38,17 @@ Environment Setup (venv)
 -------------------------
 To ensure reproducibility and isolate dependencies, this project uses a Python virtual environment (venv).
 
-Step 1 — Create the Virtual Environment
+Step 1 — Create the Virtual Environment \
     python3 -m venv venv
 
-Step 2 — Activate the Virtual Environment
-On Linux or macOS:
+Step 2 — Activate the Virtual Environment \
+On Linux or macOS:\
     source venv/bin/activate
 
-On Windows:
+On Windows:\
     venv\Scripts\activate
 
-Step 3 — Install Dependencies
+Step 3 — Install Dependencies \
     pip install -r requirements.txt
 
 Data Processing
