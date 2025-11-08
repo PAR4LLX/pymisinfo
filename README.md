@@ -74,10 +74,11 @@ python -m src.utils.suggest_maxlen
 
 ## Model Training
 
-Prepare Features:
+### Prepare Features
 
-```python
-python -m src.models.model_2.prepare_features -h
+You can simpily run `python -m python -m src.models.model_2.prepare_features --preview`. You can pass in the `-h` flag to view all command line options as well.
+
+```
 usage: prepare_features.py [-h] [--in IN_PATH] [--out OUT_DIR] [--maxlen MAXLEN] [--preview]
 
 Tokenize, encode, and split the cleaned dataset.
@@ -89,10 +90,12 @@ options:
   --maxlen MAXLEN
   --preview        Print output summary to console
 ```
-Train model:
+
+### Train model:
+
+You can train the model by running `python -m src.models.model_2.train_bilstm --epochs 12 --batch 64`. You can pass in the `-h` flag to view all command line options. 
 
 ```python
-python -m src.models.model_2.train_bilstm -h
 usage: train_bilstm.py [-h] [--features FEATURES] [--artifacts ARTIFACTS] [--maxlen MAXLEN] [--epochs EPOCHS] [--batch BATCH] [--no-class-weight] [--out OUT_MODEL_PATH] [--use-date]
 
 Train BiLSTM + Attention on processed misinformation dataset.
