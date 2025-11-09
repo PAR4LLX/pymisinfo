@@ -36,13 +36,13 @@ To ensure reproducibility and isolate dependencies, this project uses a Python v
 
 1. Create the Virtual Environment
 
-    ```sh
+    ```bash
     python3 -m venv venv
     ```
 
 2. Activate the Virtual Environment
 
-    ```sh
+    ```bash
     # Linux/Mac
     source venv/bin/activate
     ```
@@ -54,7 +54,7 @@ To ensure reproducibility and isolate dependencies, this project uses a Python v
 
 3. Install Dependencies
 
-   ```sh
+   ```bash
    pip install -r requirements.txt
    ```
 
@@ -71,7 +71,7 @@ You can simpliy run the following command to clean the dataset: `python -m src.c
 
 ### Find Max Length:
 
-```sh
+```bash
 python -m src.utils.suggest_maxlen
 ```
 
@@ -87,7 +87,7 @@ You can train the model by running `python -m src.models.model_2.train_bilstm --
 
 ### Evaluate model:
 
-```python
+```bash
 python -m src.models.model_2.evaluate_bilstm
 ```
 
@@ -95,6 +95,14 @@ python -m src.models.model_2.evaluate_bilstm
 
 Input json string:
 
-```python
+```bash
 python -m src.models.model_2.predict_input --json '{}'
+```
+
+## Running As Server
+
+Our architecture requires the AI models to accept posts from the RabbitMQ instance from the queue `misinfo/input`. It will also send misinfo reports on those posts back to `misinfo/output`. To run this, you should execute the following command:
+
+```bash
+python -m src.api.consumer_ai
 ```
