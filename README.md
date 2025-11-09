@@ -66,7 +66,13 @@ Find the latest release, and follow the instructions to download the most recent
 
 ### Clean Dataset
 
-You can simpliy run the following command to clean the dataset: `python -m src.core.data_cleansing`. You can use the `-h` flag to view all options.
+You can simpliy run the following command to clean the dataset:
+
+```python
+python -m src.core.data_cleansing
+```
+
+You can use the `-h` flag to view all options.
 
 
 ### Find Max Length:
