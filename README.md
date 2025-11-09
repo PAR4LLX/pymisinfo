@@ -79,11 +79,23 @@ python -m src.utils.suggest_maxlen
 
 ### Prepare Features
 
-You can simpily run `python -m src.models.model_2.prepare_features --preview`. You can pass in the `-h` flag to view all command line options as well.
+You can simpily run:
+
+```python
+python -m src.models.model_2.prepare_features --preview
+```
+ 
+You can pass in the `-h` flag to view all command line options as well.
 
 ### Train model:
 
-You can train the model by running `python -m src.models.model_2.train_bilstm --epochs 12 --batch 64`. You can pass in the `-h` flag to view all command line options. 
+You can train the model by running:
+
+```python
+python -m src.models.model_2.train_bilstm --epochs 12 --batch 64
+```
+
+You can pass in the `-h` flag to view all command line options. 
 
 ### Evaluate model:
 
